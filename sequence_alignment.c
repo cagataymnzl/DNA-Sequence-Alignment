@@ -23,7 +23,7 @@ int min(int num1,int num2,int num3){
 	}
 	return min;
 }
-// Elemanlar birbirinin aynısı ise 0 dönüşüm puanı değilse +1 dönüşüm puanı
+// Elemanlar birbirinin aynÃ½sÃ½ ise 0 dÃ¶nÃ¼Ã¾Ã¼m puanÃ½ deÃ°ilse +1 dÃ¶nÃ¼Ã¾Ã¼m puanÃ½
 int delta(char gen1[],char gen2[],int i,int j){
 	if(gen1[i]==gen2[j]){
 		return 0;
@@ -34,9 +34,9 @@ int delta(char gen1[],char gen2[],int i,int j){
 }
 
 
-//DÖNÜŞTÜRME ADIMLARI
+//DÃ–NÃœÃTÃœRME ADIMLARI
 int cozum_bul(char gen1[],char gen2[],int m,int n,int matrix[][MAX]){
-	if(m==0||n==0){//!ÖNEMLİ! En az bir gen indisinin 0 değerine ulaşması
+	if(m==0||n==0){//!Ã–NEMLÃ! En az bir gen indisinin 0 deÃ°erine ulaÃ¾masÃ½
 		if(m==0&&n!=0){
 			printf("%c yi ekle ::: +1 donusum\n",gen2[n-1]);
 			return cozum_bul(gen1,gen2,m,n-1,matrix);
@@ -77,7 +77,7 @@ int cozum_bul(char gen1[],char gen2[],int m,int n,int matrix[][MAX]){
 		return cozum_bul(gen1,gen2,m-1,n,matrix);
 	}
 }
-//Grafik Oluşturma Fonksiyonu
+//Grafik OluÃ¾turma Fonksiyonu
 void graf(int carpim_dizi_m[],int carpim_dizi_n[],int dizi[],int t){
 	int i,j;
 	for(i=0;i<t;i++){
@@ -88,7 +88,7 @@ void graf(int carpim_dizi_m[],int carpim_dizi_n[],int dizi[],int t){
 		printf(" ==> GEN1:%d * GEN2:%d = %d kontrol\n",carpim_dizi_m[i],carpim_dizi_n[i],dizi[i]);
 	}		
 }
-//kontrol sayısını donen fonksiyon
+//kontrol sayÃ½sÃ½nÃ½ donen fonksiyon
 int don(char gen1[],char gen2[]){
 	int m,n,i,j;
 	int kontrol=0;
@@ -108,7 +108,7 @@ int don(char gen1[],char gen2[]){
 	}
 	for(i=1;i<m+1;i++){
 		for(j=1;j<n+1;j++){
-			//kosegenlerden en kucuk olanı bul
+			//kosegenlerden en kucuk olanÃ½ bul
 			matrix[i][j]=min(matrix[i-1][j-1]+delta(gen1,gen2,i-1,j-1),matrix[i-1][j]+1,matrix[i][j-1]+1);
 			kontrol++;
 		}
@@ -136,7 +136,7 @@ int hizala(char gen1[],char gen2[]){
 	}
 	for(i=1;i<m+1;i++){
 		for(j=1;j<n+1;j++){
-			//kosegenlerden en kucuk olanı bul
+			//kosegenlerden en kucuk olanÃ½ bul
 			matrix[i][j]=min(matrix[i-1][j-1]+delta(gen1,gen2,i-1,j-1),matrix[i-1][j]+1,matrix[i][j-1]+1);
 		}
 	}
@@ -179,7 +179,7 @@ int main(){
 	
 	int kontrol_dizi[MAX];
 	srand(time(NULL));
-	while(devam<20){//İterasyon sayısı burdan belirlenebilir!MAX constant değeri 50 olarak tanımlanmıştır!
+	while(devam<20){//Ãterasyon sayÃ½sÃ½ burdan belirlenebilir!MAX constant deÃ°eri 50 olarak tanÃ½mlanmÃ½Ã¾tÃ½r!
 		
 		m=rand()%10+4;
 		n=rand()%10+4;
